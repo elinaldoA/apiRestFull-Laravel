@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtigoController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,12 @@ Route::post('artigo', [ArtigoController::class, 'store']);
 Route::put('artigo/{id}', [ArtigoController::class, 'update']);
 //Deletar artigo
 Route::delete('artigo/{id}',[ArtigoController::class,'destroy']);
+
+//Listando usuários
+Route::get('users', [UsersController::class, 'index']);
+//Criando novos usuarios
+Route::post('users', [UsersController::class, 'store']);
+//Atualizando usuarios existentes
+Route::patch('users/{user}', [UsersController::class, 'update']);
+//Excluindo usuário
+Route::delete('users/{user}', [UsersController::class, 'destroy']);
